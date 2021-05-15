@@ -3,10 +3,22 @@ resource "aws_vpc" "prometheus-server" {
   enable_dns_hostnames = true
   enable_dns_support   = true
   tags = {
-    Name = "prometheus-server-vpc"
+    Name = "prometheus-vpc"
   }
+}
+
+resource "aws_default_vpc" "default" {
+    tags = {
+      "Name" = "Default vpc"
+    }
+  
 }
 resource "aws_eip" "ip-prometheus-server" {
   instance = aws_instance.prometheus-server.id
+  vpc      = true
+}
+
+resource "aws_eip" "eip-node-exporter" {
+  instance = aws_instance.node-exporter.id
   vpc      = true
 }
