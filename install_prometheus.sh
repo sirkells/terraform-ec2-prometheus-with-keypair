@@ -20,6 +20,6 @@ cd alertmanager-0.22.0-rc.1.linux-amd64/ && ./alertmanager
 #   - job_name: 'node'
 #     ec2_sd_configs:
 #       - region: eu-central-1                              
-#         access_key: AKIAUGJZHZ2BLWTC6MUX
-#         secret_key: 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
+#         access_key: 
+#         secret_key: 
 #         port: 9100
